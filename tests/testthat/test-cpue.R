@@ -41,3 +41,16 @@ test_that("cpue works with generated data", {
     tolerance = 1e-3
   )
 })
+
+
+test_that("cpue is silent by default", {
+  expect_no_message(cpue(100, 10))
+})
+
+
+test_that("cpue error message is informative", {
+  expect_snapshot(
+    cpue("not a number", 10),
+    error = TRUE
+  )
+})
