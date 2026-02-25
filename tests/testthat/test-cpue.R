@@ -20,3 +20,24 @@ test_that("cpue handles zero catch and missing data", {
   expect_true(is.na(cpue(NA_real_, 10)))
   expect_true(is.na(cpue(100, NA_real_)))
 })
+
+test_that("cpue handles zero catch and missing data", {
+  expect_equal(cpue(catch = 0, effort = 10), 0)
+
+  expect_true(is.na(cpue(NA_real_, 10)))
+  expect_true(is.na(cpue(100, NA_real_)))
+})
+
+
+test_that("cpue works with generated data", {
+  data <- generate_fishing_data(n = 5)
+
+  result <- cpue(data$catch, data$effort)
+
+  expect_equal(
+    result,
+    c(34.053, 9.065, 19.239, 135.640, 6.372),
+    ignore_attr = TRUE,
+    tolerance = 1e-3
+  )
+})
