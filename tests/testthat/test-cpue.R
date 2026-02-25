@@ -54,3 +54,11 @@ test_that("cpue error message is informative", {
     error = TRUE
   )
 })
+
+test_that("cpue produces no warnings with valid input", {
+  expect_snapshot(
+    cpue(catch = c(100, 200, 300), effort = c(10, 20))
+  )
+
+  expect_no_warning(cpue(100, 10))
+})
