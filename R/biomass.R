@@ -4,8 +4,7 @@
 #'
 #' @param cpue Numeric vector of CPUE values
 #' @param area_swept Numeric vector of area swept (e.g., km²)
-#' @param catch Numeric value
-#' @param effort Numeric value
+#' @inheritParams cpue
 #' @param ... arguments pass to cpue
 #'
 #' @return A numeric vector of biomass index values

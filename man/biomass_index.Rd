@@ -11,9 +11,9 @@ biomass_index(cpue = NULL, area_swept, catch = NULL, effort = NULL, ...)
 
 \item{area_swept}{Numeric vector of area swept (e.g., km²)}
 
-\item{catch}{Numeric value}
+\item{catch}{Numeric vector of catch (e.g., kg)}
 
-\item{effort}{Numeric value}
+\item{effort}{Numeric vector of effort (e.g., hours)}
 
 \item{...}{arguments pass to cpue}
 }
